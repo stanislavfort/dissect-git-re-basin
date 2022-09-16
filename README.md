@@ -41,3 +41,10 @@ Also, if the effect were there, you should see **2 distinct low loss basins** (s
 It is strange that I wasn't able to replicate **the key finding** of the Git Re-Basin paper. **If you see an error in my Colabs that would explain it, let me know on Twitter @stanislavfort**. On the other hand, if the effect is indeed so brittle that I wasn't able to see if *even starting from the author's very code* it might not be such a conceptual shift as I (and many others) were expecting. However, it is still possible that I made a mistake somewhere in my replication which is causing this.
 
 <img src="https://github.com/stanislavfort/dissect-git-re-basin/blob/master/rebasin_summary_resnet_cifar10_with_comment.png?raw=true" ALIGN="center" height="100%" width="100%">
+
+**Update Friday September 16 2022 6:13 AM SF time:**
+After a good Twitter discussion it seems that the key difference here is the optimizer. To me this seemed super interesting, so I ran a sweep of experiments over different learning rates since I suspected that they would also play a huge role. It turns out that the permuted weights are linearly connected to the other network if (the learning rate is sufficiently **high** and you use **SGD**) OR (the learning rate is sufficiently **low** and you use **Adam**). I have only verified this on the MLP on MNIST case so far since the ResNet on CIFAR-10 experiments took much longer to run, but so far this makes the Re Git-Basin hypothesis at least significantly weaker and also poses another set of super interesting questions, e.g. why does it depend on the learning rate so much, why is its effect the opposite for SGD and Adam etc. I will keep investigating!
+
+<img src="https://github.com/stanislavfort/dissect-git-re-basin/blob/master/LR_effect_Adam_MLP_MNIST.png?raw=true" ALIGN="center" height="50%" width="50%">
+<img src="https://github.com/stanislavfort/dissect-git-re-basin/blob/master/LR_effect_SGD_MLP_MNIST.png?raw=true" ALIGN="center" height="50%" width="50%">
+
