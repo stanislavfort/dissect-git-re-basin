@@ -39,3 +39,5 @@ Also, if the effect were there, you should see **2 distinct low loss basins** (s
 **Takeways:**
 
 It is strange that I wasn't able to replicate **the key finding** of the Git Re-Basin paper. **If you see an error in my Colabs that would explain it, let me know on Twitter @stanislavfort**. On the other hand, if the effect is indeed so brittle that I wasn't able to see if *even starting from the author's very code* it might not be such a conceptual shift as I (and many others) were expecting. However, it is still possible that I made a mistake somewhere in my replication which is causing this.
+
+<img src="https://github.com/stanislavfort/dissect-git-re-basin/blob/master/rebasin_summary_resnet_cifar10_with_comment.png?raw=true" ALIGN="center" height="100%" width="100%">
